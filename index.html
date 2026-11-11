@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Manager Tasks</title>
+</head>
+<body>
+    <form action="" class="form">
+        <label for="Description">Description</label>
+        <input type="text" name="Description" placeholder="Enter description">
+
+        <label for="Valor">Valor</label>
+        <input type="number" name="Valor" placeholder="Enter valor">
+
+        <label for="Categoria">Categoria</label>
+        <select name="Categoria" id="Categoria">
+            <option value="Alimentação">Alimentação</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Outros">Outros</option>
+        </select>
+
+        <label for="data">Data</label>
+        <input type="date" name="data" placeholder="Enter data">
+
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <ul class="lista"></ul>
+    </ul>
+</body>
+</html>
