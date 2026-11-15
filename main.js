@@ -18,7 +18,7 @@ form.addEventListener('submit',(e)=>{
 
     lista.push({
         description:description,
-        valor:valor,
+        valor:Number(valor),
         categoria:categoria,
         data:data
     })
@@ -36,8 +36,7 @@ const renderList = () => {
 const ul = document.querySelector('.lista')
 lista.forEach((item,index) => {
  const li = document.createElement('li')
-    li.innerText =`${item.description} - R$ ${item.valor} - ${item.categoria} - ${item.data}`
-
+    li.innerText =`${item.description} - R$ ${item.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} - ${item.categoria} - ${new Date(item.data).toLocaleDateString('pt-BR',{timeZone:'UTC'})};`
     ul.appendChild(li)
 });
 
