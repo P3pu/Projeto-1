@@ -33,5 +33,13 @@ form.addEventListener('submit',(e)=>{
 
 const renderList = () => {
 // desenvolver uma lista na tela
+const ul = document.querySelector('.lista')
+lista.forEach((item,index) => {
+ const li = document.createElement('li')
+    li.innerText =`${item.description} - R$ ${item.valor} - ${item.categoria} - ${item.data}`
+
+    ul.appendChild(li)
+});
+
 }
 
