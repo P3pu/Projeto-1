@@ -34,10 +34,19 @@ form.addEventListener('submit',(e)=>{
 const renderList = () => {
 // desenvolver uma lista na tela
 const ul = document.querySelector('.lista')
+  ul.innerHTML = ''
 lista.forEach((item,index) => {
  const li = document.createElement('li')
-    li.innerText =`${item.description} - R$ ${item.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} - ${item.categoria} - ${new Date(item.data).toLocaleDateString('pt-BR',{timeZone:'UTC'})};`
-    ul.appendChild(li)
+ const btn = document.createElement('button')
+    li.innerText =`${item.description} - ${item.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} - ${item.categoria} - ${new Date(item.data).toLocaleDateString('pt-BR',{timeZone:'UTC'})};`
+    btn.innerText = 'Remover'
+    btn.classList.add('btn-remover')
+    btn.addEventListener('click', () => {
+      lista.splice(index,1)
+      renderList()
+    })
+    li.append(btn)
+    ul.append(li)
 });
 
 }
